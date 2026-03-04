@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J-SANX remnant - Official Web Page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">J-SANX remnant</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#discography">Discography</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <!-- 添付画像をここに使用する想定です。現状はメイン画像としてスタイリングしています -->
+            <img src="main_image.jpg" alt="J-SANX remnant - Legendary Guitarist" id="hero-image"
+                onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop';">
+            <div class="overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">SOUL OF THE FANTASIES</h1>
+            <p class="hero-subtitle">The Official Website of J-SANX remnant</p>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="section profile-section">
+        <div class="container">
+            <h2 class="section-title">PROFILE</h2>
+            <div class="profile-content">
+                <div class="profile-text glass-card">
+                    <p>前身バンド「J-SANX」の志を継承し、ソロプロジェクト「J-SANX remnant（J-SANXの残党）」として活動中。</p>
+                    <p>日々の生活の中でふと感じることや、そこから広がる自由な「妄想」をエッセンスに、気負わず、のんびりと、呑気なスタンスで歌っています。</p>
+                    <p>お暇な時に、ぜひ聴いてみてください。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discography Section -->
+    <section id="discography" class="section discography-section">
+        <div class="container">
+            <h2 class="section-title">DISCOGRAPHY</h2>
+            <div class="album-grid">
+                <!-- Album 1 -->
+                <div class="album-card">
+                    <div class="album-art">
+                        <div class="vinyl"></div>
+                        <img src="henshin.jpeg" alt="変身したい"
+                            onerror="this.src='https://images.unsplash.com/photo-1619983081563-430f63602796?q=80&w=1000&auto=format&fit=crop';">
+                    </div>
+                    <div class="album-info">
+                        <h3>変身したい</h3>
+                        <p class="year">2026.02.21</p>
+                        <a href="https://linkco.re/CpGsQfvq" target="_blank" class="stream-btn">Listen / Stream</a>
+                    </div>
+                </div>
+                <!-- Album 2 -->
+                <div class="album-card">
+                    <div class="album-art">
+                        <div class="vinyl"></div>
+                        <img src="dtms.jpeg" alt="DTMS"
+                            onerror="this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1000&auto=format&fit=crop';">
+                    </div>
+                    <div class="album-info">
+                        <h3>DTMS</h3>
+                        <p class="year">2026.02.24</p>
+                        <a href="https://linkco.re/YE6vEPFP" target="_blank" class="stream-btn">Listen / Stream</a>
+                    </div>
+                </div>
+                <!-- Album 3 -->
+                <div class="album-card">
+                    <div class="album-art">
+                        <div class="vinyl"></div>
+                        <img src="monokuro.jpeg" alt="モノクロ"
+                            onerror="this.src='https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=1000&auto=format&fit=crop';">
+                    </div>
+                    <div class="album-info">
+                        <h3>モノクロ</h3>
+                        <p class="year">2026.03.04</p>
+                        <a href="https://linkco.re/qa7UcHAB" target="_blank" class="stream-btn">Listen / Stream</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 J-SANX remnant Official. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
