@@ -455,6 +455,13 @@ a {
 }
 
 /* Responsive */
+@media (min-width: 769px) {
+    /* Adjust video position more precisely for PC (landscape) screens */
+    #intro-video {
+        object-position: center 30%; 
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
