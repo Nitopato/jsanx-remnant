@@ -67,6 +67,28 @@ body.no-scroll {
     z-index: 1;
 }
 
+#intro-subtitles {
+    position: absolute;
+    bottom: 20%; /* Position it in the lower half */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    opacity: 0;
+    animation: fadeInSub 1s forwards 1s; /* Fade in after 1 second */
+}
+
+#intro-subtitles p {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: #fff;
+    line-height: 1.8;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0px 0px 4px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+}
+
 #skip-btn {
     position: absolute;
     bottom: 40px;
@@ -96,6 +118,17 @@ body.no-scroll {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@keyframes fadeInSub {
+    from { 
+        opacity: 0; 
+        transform: translate(-50%, 10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translate(-50%, 0); 
+    }
 }
 
 /* Typography */
