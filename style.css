@@ -457,9 +457,10 @@ a {
 /* Responsive */
 @media (min-width: 769px) {
     /* Adjust video position more precisely for PC (landscape) screens */
-    /* Set to center 0% (top) to ensure the very top part of the video is not cropped out */
+    /* Use contain instead of cover for vertical videos on horizontal screens to prevent cropping */
     #intro-video {
-        object-position: center 0%; 
+        object-fit: contain;
+        background-color: var(--color-bg); /* Add background color to fill empty space */
     }
 }
 
