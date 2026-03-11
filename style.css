@@ -63,6 +63,7 @@ body.no-scroll {
     width: auto;
     height: auto;
     object-fit: cover;
+    object-position: center 15%; /* Focus more on the top part of the video (face) */
     z-index: 1;
 }
 
