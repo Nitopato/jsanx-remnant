@@ -2,6 +2,48 @@
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", (event) => {
+    // Intro video logic
+    const introContainer = document.getElementById('intro-container');
+    const introVideo = document.getElementById('intro-video');
+    const skipBtn = document.getElementById('skip-btn');
+
+    function closeIntro() {
+        if (introContainer && !introContainer.classList.contains('hidden')) {
+            introContainer.classList.add('hidden');
+            document.body.classList.remove('no-scroll');
+            
+            // Pause and clean up video to save memory after fade transition
+            setTimeout(() => {
+                introContainer.style.display = 'none';
+                if (introVideo) {
+                    introVideo.pause();
+                    introVideo.removeAttribute('src');
+                    introVideo.load();
+                }
+                // Refresh GSAP ScrollTrigger after the intro is removed to ensure animations trigger properly
+                ScrollTrigger.refresh();
+            }, 1000);
+        }
+    }
+
+    if (introContainer && introVideo && skipBtn) {
+        introVideo.addEventListener('ended', closeIntro);
+        skipBtn.addEventListener('click', closeIntro);
+
+        // Failsafe: Handle autoplay block or video load error
+        introVideo.addEventListener('error', closeIntro);
+        const playPromise = introVideo.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.warn("Autoplay blocked or failed:", error);
+                closeIntro();
+            });
+        }
+    } else {
+        // Failsafe if intro elements are missing
+        document.body.classList.remove('no-scroll');
+    }
+
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
