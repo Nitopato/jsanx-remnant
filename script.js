@@ -80,6 +80,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     });
 
+    // News card animation
+    gsap.from('.news-card', {
+        y: 60,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".news-section",
+            start: "top 75%",
+        }
+    });
+
     // Profile card animation
     gsap.from('.glass-card', {
         y: 60,
