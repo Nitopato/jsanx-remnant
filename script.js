@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     // Profile card animation
-    gsap.from('.glass-card', {
+    gsap.from('.profile-section .glass-card', {
         y: 60,
         opacity: 0,
         duration: 1.2,
