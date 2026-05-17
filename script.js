@@ -30,13 +30,39 @@ document.addEventListener("DOMContentLoaded", (event) => {
         introVideo.addEventListener('ended', closeIntro);
         skipBtn.addEventListener('click', closeIntro);
 
-        // Failsafe: Handle autoplay block or video load error
+        // Failsafe: Handle video load error
         introVideo.addEventListener('error', closeIntro);
+        
         const playPromise = introVideo.play();
         if (playPromise !== undefined) {
             playPromise.catch(error => {
                 console.warn("Autoplay blocked or failed:", error);
-                closeIntro();
+                
+                // Autoplay with sound is often blocked by browsers.
+                // Show a 'Tap to Play' button to allow user interaction.
+                const playBtn = document.createElement('button');
+                playBtn.innerText = "TAP TO PLAY";
+                playBtn.style.position = "absolute";
+                playBtn.style.top = "50%";
+                playBtn.style.left = "50%";
+                playBtn.style.transform = "translate(-50%, -50%)";
+                playBtn.style.padding = "15px 30px";
+                playBtn.style.fontSize = "1rem";
+                playBtn.style.zIndex = "10";
+                playBtn.style.background = "rgba(0,0,0,0.6)";
+                playBtn.style.color = "#fff";
+                playBtn.style.border = "1px solid rgba(255,255,255,0.5)";
+                playBtn.style.borderRadius = "30px";
+                playBtn.style.cursor = "pointer";
+                playBtn.style.letterSpacing = "2px";
+                playBtn.style.backdropFilter = "blur(5px)";
+                
+                introContainer.appendChild(playBtn);
+                
+                playBtn.addEventListener('click', () => {
+                    introVideo.play();
+                    playBtn.remove();
+                });
             });
         }
     } else {
